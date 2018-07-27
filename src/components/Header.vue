@@ -2,12 +2,12 @@
     <header class="header">
         <div class="container">
             <a class="logo" href="">
-                <img src="../assets/logo.png" alt="">
-                <h3>Blog</h3>
+                <img src="../assets/logo.svg" alt="">
+                <h3></h3>
             </a>
             <nav class="menu">
-                <a class="menu-item" href="">Posts1</a>
-                <a class="menu-item" href="">Posts2</a>
+                <!-- <a class="menu-item" href="">Posts1</a>
+                <a class="menu-item" href="">Posts2</a> -->
                 <Search />
             </nav>
             <div class="user">
