@@ -1,26 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Header />
+    <router-view />
   </div>
 </template>
 
+<script>
+import Header from "./components/Header";
+export default {
+  components: { Header }
+};
+</script>
+
+
 <style lang="stylus">
+html
+body
+*
+  padding 0
+  margin 0
+
+body
+  font-size: 16px
+  line-height: 1.5
+  color: #767676
+
+*
+::after
+::before
+  box-sizing: inherit;
+
+body
+  background-color #fff
+
 #app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  text-align center
   color #2c3e50
-
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
 </style>
