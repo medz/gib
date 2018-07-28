@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["post"],{"37d3":function(t,e,n){"use strict";n.r(e);var o=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t._v("Post.")])},s=[],c={created:function(){console.log(this.$route.param)}},l=c,r=n("2877"),u=Object(r["a"])(l,o,s,!1,null,null,null);e["default"]=u.exports}}]);
+//# sourceMappingURL=post.18c273e4.js.map
