@@ -10,10 +10,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vue-waterfall": "^1.0.6",
+    "vue2-waterfall": "^1.0.8",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

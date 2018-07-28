@@ -2,13 +2,15 @@
   <div id="app">
     <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default {
-  components: { Header }
+  components: { Header, Footer }
 };
 </script>
 
@@ -24,14 +26,12 @@ body
   font-size: 16px
   line-height: 1.5
   color: #767676
+  background-color #f5f5f5
 
 *
 ::after
 ::before
   box-sizing: inherit;
-
-body
-  background-color #fff
 
 #app
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -39,6 +39,7 @@ body
   -moz-osx-font-smoothing grayscale
   color #2c3e50
 </style>
+
 <style lang="stylus">
 .ripple {
   position: relative;
@@ -69,4 +70,3 @@ body
   }
 }
 </style>
-

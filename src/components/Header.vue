@@ -34,6 +34,7 @@ export default {
     box-sizing border-box
     position fixed
     top 0
+    z-index 100
 
     @media screen and (min-width 1024px)
         height 85px;

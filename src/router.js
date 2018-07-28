@@ -8,11 +8,18 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "home",
       redirect: "/posts"
     },
     {
       path: "/posts",
+      name: "posts",
       component: Posts
+    },
+    {
+      path: "/posts/:date/:nodeID.html",
+      name: "post",
+      component: () => import(/* webpackChunkName: "post" */ "./views/Post.vue")
     }
   ]
 });
