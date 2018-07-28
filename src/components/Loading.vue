@@ -31,4 +31,3 @@
     .bounce-two
         animation-delay -1s
 </style>
-
