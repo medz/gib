@@ -1,13 +1,17 @@
 import axios from "axios";
 
+const github = axios.create({
+  baseURL: `https://api.github.com/repos/${process.env.VUE_APP_GITHUB_REPO}/`
+});
+
 export function issues(page /*category*/) {
-  return axios.get("https://api.github.com/repos/slimkit/plus/issues", {
+  return github.get("issues", {
     headers: {
       Accept: "application/vnd.github.squirrel-girl-preview.full+json"
     },
     params: {
       state: "all",
-      // labels: ['gib@blog', category].toString(),
+      labels: "gib@blog",
       sort: "created",
       direction: "desc",
       page
