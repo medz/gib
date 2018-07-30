@@ -6,6 +6,6 @@ module.exports = {
     ],
     rules: {
         indent: ['error', 2, { MemberExpression: 'off' }],
-        semi: ['error', 'always', ]
+        semi: ['error', 'always']
     }
 };
