@@ -22,7 +22,7 @@ module.exports = function(options) {
     .resolve
       .set('symlinks', true)
       .alias
-        .set('@app', path.resolve(__dirname, '../../app'))
+        .set('@app', path.resolve(__dirname, '../app'))
         // Theme alias register.
         .set('@theme/layout', options.theme.layout)
         .set('@theme/home', options.theme.home)
@@ -33,8 +33,8 @@ module.exports = function(options) {
         .merge(['.js', '.jsx', '.vue', '.json', '.styl'])
         .end()
       .modules
-        .add(path.resolve(__dirname, '../../../node_modules'))
-        .add(path.resolve(__dirname, '../../../../'))
+        .add(path.resolve(__dirname, '../../node_modules'))
+        .add(path.resolve(__dirname, '../../../'))
         .add('node_modules');
 
   return webpackConfigure;
