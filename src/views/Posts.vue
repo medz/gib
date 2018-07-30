@@ -22,7 +22,7 @@
             :to="{
               name: 'post',
               params: {
-                nodeID: issue.node_id,
+                number: encodeBase64(issue.number),
                 date: zuluDateSplit(issue.created_at)
               }
             }"
@@ -38,7 +38,7 @@
                 :to="{
                   name: 'post',
                   params: {
-                    nodeID: issue.node_id,
+                    number: encodeBase64(issue.number),
                     date: zuluDateSplit(issue.created_at)
                   }
                 }"
@@ -141,9 +141,10 @@ export default {
         return 0;
       }
 
-      return value.match(
-        /^([1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]))T.*Z$/is
-      )[1];
+      return value.match(/([0-9]{4}-[0-9]{2})-.*?T.*?Z/is)[1];
+    },
+    encodeBase64(id) {
+      return btoa(`issue@number:${id}`);
     },
     matchFirstImage(html) {
       if (!html) {

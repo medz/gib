@@ -6,7 +6,7 @@
                 <!-- <h3></h3> -->
             </a>
             <nav class="menu">
-                <a class="menu-item" href="">All Posts</a>
+                <router-link tag="a" class="menu-item" :to="{ name: 'posts' }">All Posts</router-link>
                 <a class="menu-item" href="">Categories</a>
                 <Search />
             </nav>

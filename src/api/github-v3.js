@@ -18,3 +18,11 @@ export function issues(page /*category*/) {
     }
   });
 }
+
+export function issue(number) {
+  return github.get(`issues/${number}`, {
+    headers: {
+      Accept: "application/vnd.github.squirrel-girl-preview.html+json"
+    }
+  });
+}

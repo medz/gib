@@ -17,7 +17,7 @@ export default new Router({
       component: Posts
     },
     {
-      path: "/posts/:date/:nodeID.html",
+      path: "/posts/:date/:number.html",
       name: "post",
       component: () => import(/* webpackChunkName: "post" */ "./views/Post.vue")
     }
