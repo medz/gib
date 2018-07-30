@@ -1,4 +1,4 @@
 module.exports = {
-  createProject: require("./commands/create-project"),
-  build: require("./commands/build")
+  createProject: require('./commands/create-project'),
+  build: require('./commands/build')
 };

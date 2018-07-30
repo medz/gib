@@ -2,37 +2,37 @@
 
 const chalk = require('chalk');
 const semver = require('semver');
-const package = require('../package.json');
+const gib = require('../package.json');
 
-if (!semver.satisfies(process.version, package.engines.node)) {
+if (!semver.satisfies(process.version, gib.engines.node)) {
   console.log(chalk.red(
     `\n[GitHub Issue Blog] minimum Node.js version not met:` +
     `\nYou are using Node ${process.version}, but GitHub Issue ` +
-    `Blog requires Node.js ${package.engines.node}. \nPlease ` +
+    `Blog requires Node.js ${gib.engines.node}. \nPlease ` +
     `upgrade your Node.js version.`
   ));
   process.exit(1);
 }
 
-const path = require("path");
-const program = require("commander");
-const wrapCommand = require("../src/utils/wrap-command");
-const { createProject, build } = require("../src/index");
+const path = require('path');
+const program = require('commander');
+const wrapCommand = require('../src/utils/wrap-command');
+const { createProject, build } = require('../src/index');
 
 program
-  .version(package.version)
-  .usage("<command> [options]");
+  .version(gib.version)
+  .usage('<command> [options]');
 
 program
-  .command("create-project [targetDir]")
-  .description("Create a GitHub isses blog project")
+  .command('create-project [targetDir]')
+  .description('Create a GitHub isses blog project')
   .action(function (dir = '.') {
     wrapCommand(createProject)(path.resolve(dir));
   });
 
 program
-  .command("build [targetDir]")
-  .description("build dir as static site")
+  .command('build [targetDir]')
+  .description('build dir as static site')
   .option('-d, --dest <outDir>', `specify build output dir (default: ${process.cwd})`)
   .action(function (dir = '.', { dest }) {
     const outDir = dest ? path.resolve(process.cwd, dest) : process.cwd;
@@ -41,15 +41,15 @@ program
 
 // output help information on unknown commands
 program
-  .arguments("<command>")
+  .arguments('<command>')
   .action(function (cmd) {
     program.outputHelp();
     console.log('    ' + chalk.red(`Unknown command ${chalk.yellow(cmd)}.`));
-    console.log("");
+    console.log('');
   });
 
 // add some useful info on help
-program.on("--help", function () {
+program.on('--help', function () {
   console.log();
   console.log(`  Run ${chalk.cyan(`github-issue-blog <command> --help`)} for detailed usage of given command.`);
   console.log();
