@@ -33,10 +33,11 @@ program
 program
   .command('build [targetDir]')
   .description('build dir as static site')
-  .option('-d, --dest <outDir>', `specify build output dir (default: ${process.cwd})`)
-  .action(function (dir = '.', { dest }) {
-    const outDir = dest ? path.resolve(process.cwd, dest) : process.cwd;
-    wrapCommand(build)(path.resolve(dir), { outDir });
+  .option('-d, --dest <outDir>', `specify build output dir (default: ${chalk.green(process.cwd())}`)
+  .option('--debug', 'build in development mode for debugging')
+  .action(function (dir = '.', { dest, debug }) {
+    const outDir = dest ? path.resolve(process.cwd(), dest) : process.cwd();
+    wrapCommand(build)(path.resolve(dir), { debug, outDir });
   });
 
 // output help information on unknown commands
