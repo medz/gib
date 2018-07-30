@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     extends: [
-        'plugin:vue-libs/recommended',
+        'plugin:vue/recommended',
         'plugin:jest/recommended'
     ],
     rules: {

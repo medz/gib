@@ -1,7 +1,13 @@
 {
   "name": "github-issue-blog",
-  "version": "1.0.0-explore",
-  "keywords": ["blog", "issue-blog", "github", "vue", "github-issue-blog"],
+  "version": "1.0.0-explore.0",
+  "keywords": [
+    "blog",
+    "issue-blog",
+    "github",
+    "vue",
+    "github-issue-blog"
+  ],
   "description": "📝Blog creation using GitHub issues, built by Vue.js",
   "main": "src/index.js",
   "repository": "https://github.com/medz/github-issue-blog.git",
@@ -17,14 +23,15 @@
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
     "semver": "^5.5.0",
-    "webpack": "^4.16.3"
+    "webpack": "^4.16.3",
+    "webpack-chain": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^5.2.0",
     "eslint-plugin-jest": "^21.18.0",
-    "eslint-plugin-vue-libs": "^3.0.0"
+    "eslint-plugin-vue": "^4.7.1"
   },
   "engines": {
-    "none": ">=11"
+    "node": ">=8"
   }
 }
