@@ -1,37 +1,18 @@
 {
   "name": "github-issue-blog",
-  "version": "0.1.0",
+  "version": "1.0.0-explore",
+  "description": "📝Blog creation using GitHub issues, built by Vue.js",
+  "main": "src/index.js",
+  "repository": "https://github.com/medz/github-issue-blog.git",
+  "author": "Seven Du <shiweidu@outlook.com>",
   "license": "MIT",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "deploy": "npm run build && gh-pages -d dist -m \"chore: Build SPA & Update assets.\" -t"
-  },
   "dependencies": {
-    "axios": "^0.18.0",
-    "github-markdown-css": "^2.10.0",
-    "register-service-worker": "^1.0.0",
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
-    "vue2-waterfall": "^1.0.8",
-    "vuex": "^3.0.1"
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "semver": "^5.5.0",
+    "webpack": "^4.16.3"
   },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-rc.7",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.7",
-    "@vue/cli-plugin-pwa": "^3.0.0-rc.7",
-    "@vue/cli-plugin-unit-jest": "^3.0.0-rc.7",
-    "@vue/cli-service": "^3.0.0-rc.7",
-    "@vue/eslint-config-prettier": "^3.0.0-rc.7",
-    "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "gh-pages": "^1.2.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.5.16"
+  "engines": {
+    "none": ">=11"
   }
 }
