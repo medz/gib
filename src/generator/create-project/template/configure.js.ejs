@@ -1,0 +1,24 @@
+module.exports = {
+  github: {
+    username: '<Your GitHub username>',
+    repository: '<Your GitHub repo name>'
+    /* For example: {
+     *  username: 'medz',
+     *  repository: 'github-issus-blog'
+     * }
+     * -> https://github.com/medz/github-issue-blog
+     * 💡 The repository must be under the username, 
+     */
+  },
+  debug: true,
+  theme: [require('<%- defaultThemePackageName %>'), {
+    name: "<%= name %>",
+    keywords: [
+      <% keywords.forEach(function (keyword) { %>
+        '<%= keyword %>'
+      <% }); %>
+    ],
+    description: "<%= description %>",
+  }],
+  plugins: []
+};
