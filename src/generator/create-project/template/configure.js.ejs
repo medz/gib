@@ -7,18 +7,14 @@ module.exports = {
      *  repository: 'github-issus-blog'
      * }
      * -> https://github.com/medz/github-issue-blog
-     * 💡 The repository must be under the username, 
+     * 💡 The repository must be under the username.
      */
   },
   debug: true,
-  theme: [require('<%- defaultThemePackageName %>'), {
+  theme: [require('github-issue-blog/src/default-theme'), {
     name: "<%= name %>",
-    keywords: [
-      <% keywords.forEach(function (keyword) { %>
-        '<%= keyword %>'
-      <% }); %>
-    ],
-    description: "<%= description %>",
+    keywords: <%- JSON.stringify(keywords) %>,
+    description: '<%= description %>',
   }],
   plugins: []
 };

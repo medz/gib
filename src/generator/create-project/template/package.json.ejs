@@ -1,0 +1,11 @@
+{
+  "name": "<%= name %>",
+  "keywords": <%- JSON.stringify(keywords) %>,
+  "description": "<%= description %>",
+  "private": true,
+  "license": "MIT",
+  "scripts": <%- JSON.stringify(scripts, null, 2) %>,
+  "dependencies": {
+    "<%= name %>": "^<%= version %>"
+  }
+}

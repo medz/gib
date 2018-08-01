@@ -11,6 +11,6 @@ module.exports = async function (outDir) {
   console.log(`📌 Generating package.json...`);
   await creator.createPackageJson();
 
-  console.log(`🛠 Generating configure...`);
+  console.log(`🛠  Generating configure...`);
   await creator.createConfigure();
 };

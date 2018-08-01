@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
+const ejs = require('ejs');
 const gib = require('../../../package.json');
 
 module.exports = class Creator {
@@ -11,7 +12,6 @@ module.exports = class Creator {
    */
   constructor(context) {
     this.context = context;
-    this.pkgFile = path.resolve(context, 'package.json');
   }
 
   /**
@@ -27,19 +27,12 @@ module.exports = class Creator {
    * Create package.json file.
    */
   async createPackageJson() {
-    let pkg = {
-      name: gib.name,
-      keywords: gib.keywords,
-      description: gib.description,
-      private: true,
-      license: gib.license
-    };
-
-    if (fs.existsSync(this.pkgFile)) {
+    let filename = path.resolve(this.context, 'package.json');
+    if (fs.existsSync(filename)) {
       const { ok } = await inquirer.prompt([{
         name: 'ok',
         type: 'confirm',
-        message: `The "${this.pkgFile}" file already exists, is it replaced?`
+        message: `The "${filename}" file already exists, is it replaced?`
       }]);
 
       if (!ok) {
@@ -48,16 +41,26 @@ module.exports = class Creator {
       }
     }
 
-    fs.writeJsonSync(this.pkgFile, pkg, { spaces: 2 });
+    let data = Object.assign({}, gib, { scripts: {
+      build: `${gib.name} build`
+    } });
+    let pkg = await ejs.renderFile(path.resolve(__dirname, 'template/package.json.ejs'), data, { async: true });
+    fs.writeJsonSync(filename, JSON.parse(pkg), { spaces: 2 });
   }
 
+  /**
+   * Create configure.js file.
+   */
   async createConfigure() {
     let context = path.resolve(this.context, gib.GitHubIssueBlog.configurePath);
     
     if (!fs.existsSync(context) || !fs.lstatSync(context).isDirectory()) {
-      fs.ensureDirSync(this.context);
+      fs.ensureDirSync(context);
     }
 
     let configurePath = path.resolve(context, 'configure.js');
+    let configireContent = await ejs.renderFile(path.resolve(__dirname, 'template/configure.js.ejs'), gib, { async: true });
+    
+    fs.writeFileSync(configurePath, configireContent);
   }
 }
