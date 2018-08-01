@@ -1,0 +1,19 @@
+{
+  "name": "github-issue-blog",
+  "keywords": [
+    "blog",
+    "issue-blog",
+    "github",
+    "vue",
+    "github-issue-blog"
+  ],
+  "description": "📝Blog creation using GitHub issues, built by Vue.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "github-issue-blog build"
+  },
+  "dependencies": {
+    "github-issue-blog": "^1.0.0-explore.0"
+  }
+}

@@ -1,4 +1,8 @@
 module.exports = {
   debug: true,
-  theme: {}
+  theme: {
+    package: require('./default-theme')
+  },
+  postcss: {},
+  stylus: {}
 };

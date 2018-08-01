@@ -14,9 +14,9 @@ module.exports = {
   publicPath: '/',
   theme: {
     options: {
-      name: "<%= name %>",
-      keywords: <%- JSON.stringify(keywords) %>,
-      description: '<%= description %>',
+      name: "github-issue-blog",
+      keywords: ["blog","issue-blog","github","vue","github-issue-blog"],
+      description: '📝Blog creation using GitHub issues, built by Vue.js',
     }
   },
   plugins: []

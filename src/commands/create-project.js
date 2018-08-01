@@ -1,16 +1,15 @@
-const chalk = require('chalk');
-const inquirer = require('inquirer');
-const Creator = require('../generator/create-project');
+const creatorGenerator = require('../generator/create-project');
 
-module.exports = async function (outDir) {
-  const creator = new Creator(outDir);
+module.exports = async function (targetDir) {
+  const creator = await creatorGenerator(targetDir);
+  console.log('Creating project...');
   
-  console.log(`🎈 Creating context...`);
-  await creator.createContextDir();
+  // Create package.json
+  await creator.createPackage();
 
-  console.log(`📌 Generating package.json...`);
-  await creator.createPackageJson();
-
-  console.log(`🛠  Generating configure...`);
+  // create configure.js
   await creator.createConfigure();
+
+  // create .gitigonre
+  await creator.createGitigonre();
 };
