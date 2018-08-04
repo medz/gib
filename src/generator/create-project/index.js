@@ -21,5 +21,6 @@ module.exports = async function (context) {
     createPackage: generatrFn(require('./create-package'), context),
     createConfigure: generatrFn(require('./create-configure'), context),
     createGitigonre: generatrFn(require('./create-gitigonre'), context),
+    copyingPublic: generatrFn(require('./copying-public'), context),
   };
 };

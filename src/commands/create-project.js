@@ -12,4 +12,7 @@ module.exports = async function (targetDir) {
 
   // create .gitigonre
   await creator.createGitigonre();
+
+  // copying public
+  await creator.copyingPublic();
 };
