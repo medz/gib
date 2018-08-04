@@ -4,8 +4,8 @@ const WebpackChain = require('webpack-chain');
 module.exports = function(options) {
   const isProd = process.env.NODE_ENV === 'production';
   const inlineLimit = 10000;
-  const { VueLoaderPlugin } = require('vue-loader')
-  const CSSExtractPlugin = require('mini-css-extract-plugin')
+  const { VueLoaderPlugin } = require('vue-loader');
+  const CSSExtractPlugin = require('mini-css-extract-plugin');
   const webpackConfigure = new WebpackChain();
 
   webpackConfigure

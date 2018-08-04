@@ -1,3 +1,3 @@
 <template>
-    <div>Post List.</div>
+  <div>Post List.</div>
 </template>

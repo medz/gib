@@ -1,6 +1,6 @@
 module.exports = async function (targetDir, { outDir, debug }) {
   const path = require('path');
-  const webpack = require('webpack')
+  const webpack = require('webpack');
 
   let configure = require('../utils/load-configure')(targetDir);
   const { package: themeEntry, options: themeOptions } = configure.theme;
@@ -18,7 +18,7 @@ module.exports = async function (targetDir, { outDir, debug }) {
   let webpackConfigure = require('../webpack/create-base-configure')(configure);
   webpackConfigure
     .entry('app')
-      .add(path.resolve(__dirname, '../app/client-entry.js'))
+      .add(path.resolve(__dirname, '../app/client-entry.js'));
 
   webpack(webpackConfigure.toConfig(), (err, state) => {
     console.log(state);
